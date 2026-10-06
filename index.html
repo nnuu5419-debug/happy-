@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Эжемдин туулган күнү 💐</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Georgia", serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: white;
+      text-align: center;
+
+      background:
+        radial-gradient(circle at top, #ffb6d9, transparent 35%),
+        linear-gradient(135deg, #8e2de2, #ff6b9d, #ffb6c1);
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 750px;
+      padding: 45px 30px;
+      border-radius: 35px;
+
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+
+      backdrop-filter: blur(15px);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.3),
+        inset 0 0 30px rgba(255,255,255,0.1);
+
+      animation: appear 1.5s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .top {
+      font-size: 20px;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 8vw, 70px);
+      margin-bottom: 10px;
+
+      text-shadow:
+        0 0 10px #fff,
+        0 0 25px #ff69b4;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .cake {
+      font-size: 100px;
+      margin: 15px 0;
+
+      animation:
+        bounce 2s infinite,
+        glow 2s infinite alternate;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        filter: drop-shadow(0 0 5px white);
+      }
+
+      to {
+        filter: drop-shadow(0 0 25px #fff);
+      }
+    }
+
+    .wish {
+      font-size: 21px;
+      line-height: 1.8;
+      margin: 25px auto;
+      max-width: 620px;
+    }
+
+    .special {
+      margin: 30px 0;
+      padding: 25px;
+
+      border-radius: 25px;
+
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .special h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .special p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    button {
+      margin-top: 15px;
+
+      border: none;
+      padding: 16px 35px;
+
+      border-radius: 50px;
+
+      background: linear-gradient(
+        45deg,
+        #ff2f75,
+        #ff78a9
+      );
+
+      color: white;
+
+      font-size: 18px;
+      font-weight: bold;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.25);
+
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 0 30px rgba(255,255,255,0.7);
+    }
+
+    #surprise {
+      display: none;
+
+      margin-top: 30px;
+
+      animation: appear 1s ease;
+    }
+
+    #surprise h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    #surprise p {
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    .flowers {
+      font-size: 42px;
+      margin: 20px 0;
+      letter-spacing: 8px;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    /* Жүрөктөр */
+
+    .heart {
+      position: fixed;
+      bottom: -50px;
+
+      font-size: 25px;
+
+      animation: heartFly 7s linear infinite;
+
+      pointer-events: none;
+    }
+
+    @keyframes heartFly {
+
+      0% {
+        bottom: -50px;
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      100% {
+        bottom: 110vh;
+        opacity: 0;
+        transform:
+          translateX(100px)
+          rotate(360deg);
+      }
+    }
+
+    .h1 {
+      left: 10%;
+      animation-delay: 1s;
+    }
+
+    .h2 {
+      left: 30%;
+      animation-delay: 3s;
+    }
+
+    .h3 {
+      left: 55%;
+      animation-delay: 5s;
+    }
+
+    .h4 {
+      left: 80%;
+      animation-delay: 2s;
+    }
+
+    .footer {
+      margin-top: 35px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    @media(max-width:600px) {
+
+      .card {
+        padding: 35px 20px;
+      }
+
+      .wish {
+        font-size: 18px;
+      }
+
+      .special p {
+        font-size: 16px;
+      }
+
+      .cake {
+        font-size: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Учкан жүрөктөр -->
+
+  <div class="heart h1">💗</div>
+  <div class="heart h2">💖</div>
+  <div class="heart h3">💝</div>
+  <div class="heart h4">💕</div>
+
+  <div class="container">
+
+    <div class="card">
+
+      <div class="top">
+        ✨ БҮГҮН ӨЗГӨЧӨ КҮН ✨
+      </div>
+
+      <h1>Эжем 💐</h1>
+
+      <div class="subtitle">
+        Туулган күнүңүз менен! ❤️
+      </div>
+
+      <div class="cake">
+        🎂
+      </div>
+
+      <div class="flowers">
+        🌷 🌸 🌹 🌺 🌷
+      </div>
+
+      <p class="wish">
+
+        Ардактуу, сүйүктүү эжем! 💖
+
+        <br><br>
+
+        Сизди бүгүнкү өзгөчө күнүңүз —
+        <b>туулган күнүңүз менен чын жүрөктөн куттуктайм!</b>
+
+        🌸
+
+        <br><br>
+
+        Ар дайым жүзүңүздөн жылмаюу кетпесин,
+        жүрөгүңүз кубанычка толсун.
+        Ден соолугуңуз бекем,
+        өмүрүңүз узун болсун! ✨
+
+      </p>
+
+      <div class="special">
+
+        <h2>💌 Сизге кичинекей кат</h2>
+
+        <p>
+
+          Эже — бул жөн гана эже эмес.
+          Эже — ар дайым колдоп турган,
+          керек учурда кеңеш берген,
+          кубанычыңа чын жүрөктөн кубанган
+          эң жакын адамдардын бири. ❤️
+
+          <br><br>
+
+          Сизге жашоодогу эң сонун нерселерди,
+          чексиз бакытты,
+          тынчтыкты жана көптөгөн
+          бактылуу күндөрдү каалайм. 🌷
+
+        </p>
+
+      </div>
+
+      <button onclick="openSurprise()">
+        🎁 Сюрпризди ачуу
+      </button>
+
+      <div id="surprise">
+
+        <div class="flowers">
+          💐 🌹 💐
+        </div>
+
+        <h2>
+          💖 ЭЖЕМ, СИЗДИ ЖАКШЫ КӨРӨМ! 💖
+        </h2>
+
+        <p>
+
+          Кандай гана кыялдарыңыз болбосун —
+          баары биринин артынан бири орундалсын! ✨
+
+          <br><br>
+
+          Ар бир таң сизге кубаныч алып келсин,
+          ар бир күнүңүз күлкүгө толсун,
+          жүрөгүңүздө эч качан кайгы болбосун. 🥰
+
+          <br><br>
+
+          <b>
+            Туулган күнүңүз кут болсун,
+            сүйүктүү эжем! 🎂❤️
+          </b>
+
+        </p>
+
+      </div>
+
+      <div class="signature">
+        Сизге болгон чоң сүйүү менен ❤️
+      </div>
+
+      <div class="footer">
+        🌸 Бул сайт сиз үчүн атайын жасалды 🌸
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function openSurprise() {
+
+      const surprise =
+        document.getElementById("surprise");
+
+      surprise.style.display = "block";
+
+      // Конфетти чыгаруу
+
+      for(let i = 0; i < 70; i++) {
+
+        const confetti =
+          document.createElement("div");
+
+        const emojis = [
+          "🎉",
+          "✨",
+          "💖",
+          "🌸",
+          "🎊",
+          "💕",
+          "⭐"
+        ];
+
+        confetti.innerHTML =
+          emojis[
+            Math.floor(
+              Math.random() * emojis.length
+            )
+          ];
+
+        confetti.style.position = "fixed";
+
+        confetti.style.left =
+          Math.random() * 100 + "vw";
+
+        confetti.style.top = "-30px";
+
+        confetti.style.fontSize =
+          (15 + Math.random() * 25) + "px";
+
+        confetti.style.zIndex = "9999";
+
+        confetti.style.transition =
+          "top 3s ease, transform 3s ease";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+
+          confetti.style.top = "110vh";
+
+          confetti.style.transform =
+            `rotate(${Math.random() * 1000}deg)`;
+
+        }, 50);
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 3500);
+      }
+    }
+
+  </script>
+
+</body>
+</html>
